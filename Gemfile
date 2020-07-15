@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'benchmark', '~> 0.1.0'
+gem 'benchmark-ips', '~> 2.8', '>= 2.8.2'
+gem 'benchmark-memory', '~> 0.1.2'
+gem 'pry-byebug', '~> 3.9'
+gem 'ruby-prof', '~> 1.4', '>= 1.4.1'

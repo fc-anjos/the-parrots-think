@@ -15,5 +15,5 @@ def pickingNumbers(a)
         all_sub.append(sub_array)
         i = j
     end
-    print all_sub
+    return all_sub.max_by(&:length).length
 end

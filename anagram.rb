@@ -19,8 +19,8 @@ def anagram(s)
 end
 
 puts anagram("xaxbbbxx")
-#asaaa
-#saaaa
+# xaxb
+# bbxx
 # 1. Divide string in 2
 # 2. read each letter on both strings
 # 3. remove each matching letter

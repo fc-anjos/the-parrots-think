@@ -31,15 +31,16 @@
 
 def anagram(s)
   if s.length.even?
-    substring1 = s[0..s.length/2 - 1]
-    substring2 = s[s.length/2..s.length-1]
+    substring1 = s[0..s.length/2 - 1].split('')
+    substring2 = s[s.length/2..s.length-1].split('')
     i = 0
-    while i < substring1.length-1
+    while i <= substring1.length
       if substring2.index(substring1[i])
+        char = substring1[i]
         substring1.delete_at(i)
-        substring2..delete_at(substring2.index(substring1[i]))
+        substring2.delete_at(substring2.index(char))
       else
-        i++
+        i += 1
       end
     end
     return substring1.count
@@ -48,4 +49,4 @@ def anagram(s)
   end
 end
 
-p anagram("asaaasaaaa")
+puts anagram("xaxbbbxx")

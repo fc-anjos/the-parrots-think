@@ -38,7 +38,7 @@ def benchmark(arr)
     x.report("Prime Numbers Memory") { number_of_primes(arr) }
   end
 
-  Benchmark.memory do |x|
+  Benchmark.ips do |x|
     x.report("Prime Numbers Iteration Per Second") { number_of_primes(arr) }
   end
 end

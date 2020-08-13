@@ -55,7 +55,7 @@ def even_fibonacci_loop(n)
 # TESTING
 #########
 
-def benchmark(n)
+def benchmark_reduce(n)
   Benchmark.bmbm do |x|
     x.report("Even Fibonacci Time Elapsed") { even_fibonacci_reduce(n) }
   end
@@ -69,6 +69,24 @@ def benchmark(n)
   end
 end
 
-n = 10000
+def benchmark_loop(n)
+  Benchmark.bmbm do |x|
+    x.report("Even Fibonacci Time Elapsed") { even_fibonacci_loop(n) }
+  end
 
-benchmark(n)
+  Benchmark.memory do |x|
+    x.report("Even Fibonacci Memory") { even_fibonacci_loop(n) }
+  end
+
+  Benchmark.ips do |x|
+    x.report("Even Fibonacci Iteration Per Second") { even_fibonacci_loop(n) }
+  end
+end
+
+n = 100000000
+
+benchmark_loop(n)
+benchmark_reduce(n)
+
+# rehearsal is like a practice round
+# recursion requires more memory but loop more time to complete the cycle
